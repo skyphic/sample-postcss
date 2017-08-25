@@ -1,0 +1,41 @@
+
+.l-grid {
+  .l-grid_item-1 {
+    width: percentage(1/4);
+    @include grid-margin;
+    padding-bottom: 20px;
+    float: left;
+  }
+
+  .l-grid_item-2 {
+    width: percentage(2/4);
+    @include grid-margin;
+    padding-bottom: 20px;
+    float: left;
+  }
+
+  .l-grid_item-3 {
+    width: percentage(3/4);
+    @include grid-margin;
+    padding-bottom: 20px;
+    float: left;
+  }
+
+  .l-grid_item-4 {
+    width: percentage(4/4);
+    @include grid-margin;
+    padding-bottom: 20px;
+    float: left;
+  }
+}
+
+
+/* デモ */
+.grid-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  text-align: center;
+  background-color: #0091ea;
+}

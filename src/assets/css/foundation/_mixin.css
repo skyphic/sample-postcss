@@ -1,0 +1,16 @@
+/*----------------------------------
+Mixin
+----------------------------------*/
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content:'';
+  }
+}
+
+@mixin grid-margin {
+  padding-right: var(--f-margin-S);
+  padding-left: var(--f-margin-S);
+}

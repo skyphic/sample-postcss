@@ -1,0 +1,41 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev",
+    "dev": " npm-run-all -p dev:*",
+    "dev:prefix": "postcss  -o ./src/assets/css/style.min.css ./src/assets/css/style.css -w",
+    "dev:Js": "uglifyjs ./src/assets/js/vendor/*.js  ./src/assets/js/script.js -o ./src/assets/js/script.mim.js -c",
+    "dev:JsWatch": "chokidar ./src/assets/js/script.js ./src/assets/js/vendor/*.js --command 'npm run dev:Js'",
+    "dev:Server": "lite-server",
+    "build": "rimraf dist/** && npm-run-all build:*",
+    "build:Copy": "cpx \"./src/**/{*.html,*.eot,*.svg}\" ./dist",
+    "build:Css": "postcss -o ./dist/assets/css/style.min.css ./src/assets/css/style.css",
+    "build:Js": "cpx \"./src/assets/js/script.mim.js\" ./dist/assets/js/",
+    "build:img": "imagemin -p pngquant ./src/assets/img/* -o ./dist/assets/img/"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "chokidar-cli": "^1.2.0",
+    "cpx": "^1.5.0",
+    "cssnano": "^3.10.0",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1",
+    "lite-server": "^2.3.0",
+    "npm-run-all": "^4.0.2",
+    "postcss-calc": "^6.0.0",
+    "postcss-cli": "^4.1.0",
+    "postcss-custom-properties": "^6.1.0",
+    "postcss-easy-import": "^2.1.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-nested": "^2.1.2",
+    "postcss-percentage": "^0.0.0",
+    "postcss-sassy-mixins": "^2.1.0",
+    "postcss-strip-inline-comments": "^0.1.5",
+    "rimraf": "^2.6.1",
+    "uglify-js": "^3.0.27"
+  }
+}
